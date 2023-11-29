@@ -11,7 +11,7 @@ const URI_DB = process.env.URI_DB;
 connect(URI_DB);
 app.use(express.json());
 app.use("/", express.static("uploads"));
-app.use("/api", router);
+app.use("/api", cors({ origin: "*" }), router);
 app.listen(PORT, () => {
   console.log(`app is running ${PORT}`);
 });
