@@ -32,7 +32,7 @@ export const signUp = async (req, res) => {
     // Bước 4: Khởi tạo user trong db
     const user = await User.create({
       ...req.body,
-      image: req.file.path,
+      image: req.file.originalname,
       password: hashedPassword,
     });
     // Bước 5: Thông báo cho người dùng đăng ký thành công.

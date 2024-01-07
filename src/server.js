@@ -12,6 +12,9 @@ connect(URI_DB);
 app.use(express.json());
 app.use("/", express.static("uploads"));
 app.use("/api", router);
+app.get("/", function (req, res) {
+  res.send("Hello, World. I'm Nodejs");
+});
 app.listen(PORT, () => {
   console.log(`app is running ${PORT}`);
 });
